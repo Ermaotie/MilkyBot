@@ -35,7 +35,7 @@ module.exports = function(app,conf) {
         var token = req.params.token;
         const chat_id = aesDecrypt(token,key)
         const msg = req.body.text;
-        var pm = req.data.parse_mode
+        var pm = req.body.parse_mode
         if(pm === "Markdown" || pm ==="md") pm = "MarkdownV2";
         if(pm === "html") pm = "HTML"
         if(msg){

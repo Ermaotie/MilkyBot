@@ -10,16 +10,17 @@
 
 [Server酱](http://sc.ftqq.com/)公众号发布公告，微信官方可能加大对模板消息的限制，而ServerChan正是基于其模板消息。作者也说明了ServerChan可能会在一个未知的时间关闭，我使用ServerChan有很长一段时间，在这里也向作者Easy表示感谢与敬意。
 
-MilkyBot是一个基于`TelegramBot` 的发送信息的小工具，供个人使用就目前情况而言完全足够。它目前能够通过`get/post`方式发送`text`类的消息。
+MilkyBot是一个基于`TelegramBot` 的发送信息的小工具，供我个人使用就目前情况而言完全足够。它目前能够通过`get/post`方式发送消息。
 
 #### 优势
 
 * 免去了设置[`Webhook`](https://core.telegram.org/bots/api#setwebhook)的操作
 * 提供了简单加密`chat_id`
+* 支持markdown以及HTML
 
 ### 部署流程
 
-1.  创建你的机器人，在`/botfather`对话中输入`/newbot`指令，并按要求操作。重要的是要获取到你的机器人的**Token**
+1.  点击[创建你的机器人](https://t.me/botfather)，在`/botfather`对话中输入`/newbot`指令，并按要求操作。重要的是要获取到你的机器人的  **Token**
 
 2. [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://dashboard.heroku.com/new?template=https://github.com/Ermaotie/MilkyBot) 
 
@@ -37,10 +38,27 @@ MilkyBot是一个基于`TelegramBot` 的发送信息的小工具，供个人使�
 
 5. 获取到的链接即可使用。
 
+### 使用方法
+
+`get/post`含有你`Token`的链接：
+
+`https://your-appname.herokuapp.com/<your token>`
+
+##### 参数：
+
+| 参数名     |            内容            |
+| ---------- | :------------------------: |
+| text       |        your content        |
+| parse_mode | Markdown(默认可不填), HTML |
+
+
+
+
+
 #### To DO
 
 * 频道订阅
-* markdown消息类型支持
+* ~~markdown消息类型支持~~（已支持，同时支持html）
 
 
 
