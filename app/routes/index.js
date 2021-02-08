@@ -13,7 +13,7 @@ module.exports = function(app,conf) {
         const chat_id = aesDecrypt(token,key)
         const msg = req.query.text;
         const pm = req.query.parse_mode
-        if(pm === "Markdown" || pm ==="md") pm = "MarkdownV2";
+        if(pm === "markdown" || pm ==="md") pm = "Markdown";
         if(pm === "html") pm = "HTML"
         if(msg){
             var payload = {
@@ -36,13 +36,13 @@ module.exports = function(app,conf) {
         const chat_id = aesDecrypt(token,key)
         const msg = req.body.text;
         var pm = req.body.parse_mode
-        if(pm === "Markdown" || pm ==="md") pm = "MarkdownV2";
+        if(pm === "markdown" || pm ==="md") pm = "Markdown";
         if(pm === "html") pm = "HTML"
         if(msg){
             var payload = {
                 "chat_id" : chat_id,
                 "text" : msg,
-                "parse_mode": pm || "MarkdownV2"
+                "parse_mode": pm || "Markdown"
             };
             post2tgbot(payload);
             res.send("Success");
