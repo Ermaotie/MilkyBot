@@ -46,10 +46,10 @@ MilkyBot是一个基于`TelegramBot` 的发送信息的小工具，供我个人�
 
 ##### 参数：
 
-| 参数名     |            内容            |
-| ---------- | :------------------------: |
-| text       |        your content        |
-| parse_mode | Markdown(默认可不填), HTML |
+| 参数名     |           内容            |
+| ---------- | :-----------------------: |
+| text       |       your content        |
+| parse_mode | Markdown, HTML,text(默认) |
 
 
 
@@ -63,3 +63,4 @@ MilkyBot是一个基于`TelegramBot` 的发送信息的小工具，供我个人�
 
 
 如果觉得这个项目不错，不妨点个星星，这是对我最大的激励！
+

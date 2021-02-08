@@ -42,7 +42,7 @@ module.exports = function(app,conf) {
             var payload = {
                 "chat_id" : chat_id,
                 "text" : msg,
-                "parse_mode": pm || "Markdown"
+                "parse_mode": pm
             };
             post2tgbot(payload);
             res.send("Success");
