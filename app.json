@@ -1,7 +1,13 @@
 {
     "name": "MilkyBot",
     "description": "deploy your telegrambot to heroku",
-    "keywords": ["telegram"],
+    "keywords": [
+      "tgbot",
+      "heroku",
+      "serverless",
+      "nodejs",
+      "lightweight"
+    ],
     "env":{
         "BOT_TOKEN":{
           "description":"Your Bot Token",
