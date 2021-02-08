@@ -12,10 +12,14 @@ module.exports = function(app,conf) {
         var token = req.params.token;
         const chat_id = aesDecrypt(token,key)
         const msg = req.query.text;
+        const pm = req.query.parse_mode
+        if(pm === "Markdown" || pm ==="md") pm = "MarkdownV2";
+        if(pm === "html") pm = "HTML"
         if(msg){
             var payload = {
                 "chat_id" : chat_id,
-                "text" : msg
+                "text" : msg,
+                "parse_mode": pm
             };
             post2tgbot(payload);
             res.send("Success");
@@ -31,10 +35,14 @@ module.exports = function(app,conf) {
         var token = req.params.token;
         const chat_id = aesDecrypt(token,key)
         const msg = req.body.text;
+        var pm = req.data.parse_mode
+        if(pm === "Markdown" || pm ==="md") pm = "MarkdownV2";
+        if(pm === "html") pm = "HTML"
         if(msg){
             var payload = {
                 "chat_id" : chat_id,
-                "text" : msg
+                "text" : msg,
+                "parse_mode": pm || "MarkdownV2"
             };
             post2tgbot(payload);
             res.send("Success");
