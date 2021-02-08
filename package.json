@@ -1,0 +1,36 @@
+{
+  "name": "milkybot",
+  "version": "1.0.0",
+  "description": "A simple and convenient TgBot for sending messages.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ermaotie/MilkyBot.git"
+  },
+  "keywords": [
+    "tgbot",
+    "heroku",
+    "serverless",
+    "nodejs",
+    "lightweight"
+  ],
+  "author": "Ermaotie",
+  "env":{
+    "BOT_TOKEN":{
+      "description":"Your Bot Token",
+      "value": ""
+    },
+    "KEY":{
+      "description":"To Encrypt Your ID",
+      "value": "Ermaotie"
+    }
+  },
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/Ermaotie/MilkyBot/issues"
+  },
+  "homepage": "https://github.com/Ermaotie/MilkyBot#readme"
+}
