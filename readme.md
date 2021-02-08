@@ -19,11 +19,15 @@ MilkyBot是一个基于`TelegramBot` 的发送信息的小工具，供个人使�
 
 ### 部署流程
 
-1.  创建你的机器人，在`/botfather`对话中输入`/newbot`指令，并按要求操作。
+1.  创建你的机器人，在`/botfather`对话中输入`/newbot`指令，并按要求操作。重要的是要获取到你的机器人的**Token**
 
-2.  [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://dashboard.heroku.com/new?template=https://github.com/Ermaotie/MilkyBot) 输入机器人的`token`
+2. [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://dashboard.heroku.com/new?template=https://github.com/Ermaotie/MilkyBot) 
 
-3. 等待部署完成，访问你APP的地址，默认应为：
+   输入机器人的`token`
+
+   `KEY`为加密时所需要的密钥，密钥不同，生成的用户Token就不同。
+
+3. 等待部署完成，访问你APP，默认应为：
 
    `your-appname.herokuapp.com`
 
@@ -37,3 +41,7 @@ MilkyBot是一个基于`TelegramBot` 的发送信息的小工具，供个人使�
 
 * 频道订阅
 * markdown消息类型支持
+
+
+
+如果觉得这个项目不错，不妨点个星星，这是对我最大的激励！
