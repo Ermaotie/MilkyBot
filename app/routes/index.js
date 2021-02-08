@@ -52,7 +52,7 @@ module.exports = function(app,conf) {
         var token = aesEncrypt(chat_id.toString(),key);
         var payload = {
             "chat_id" : chat_id,
-            "text" : "你的Token：\n" + token + "\n使用方式；发送get/post请求到\n"+"https://"+req.hostname+"/"+token+"\n"+"参数内容\n\"message\":\"Content you want to send\""
+            "text" : "你的Token：\n" + token + "\n使用方式；发送get/post请求到\n"+"https://"+req.hostname+"/"+token+"\n"+"参数内容\n\"text\":\"Content you want to send\""
         };
         post2tgbot(payload);
         res.send(payload);
@@ -65,6 +65,7 @@ module.exports = function(app,conf) {
     if(isNotSetWebhook) {
       const host = "https://"+req.hostname;
       setWebhook(host)
+      console.log(isNotSetWebhook)
     }
     if(!bot_name){
       var url = baseUrl + '/getMe'
