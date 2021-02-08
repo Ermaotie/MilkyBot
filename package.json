@@ -18,16 +18,6 @@
     "lightweight"
   ],
   "author": "Ermaotie",
-  "env":{
-    "BOT_TOKEN":{
-      "description":"Your Bot Token",
-      "value": ""
-    },
-    "KEY":{
-      "description":"To Encrypt Your ID",
-      "value": "Ermaotie"
-    }
-  },
   "license": "GPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/Ermaotie/MilkyBot/issues"

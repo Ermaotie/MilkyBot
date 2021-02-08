@@ -1,0 +1,17 @@
+{
+    "name": "MilkyBot",
+    "description": "deploy your telegrambot to heroku",
+    "keywords": ["telegram"],
+    "env":{
+        "BOT_TOKEN":{
+          "description":"Your Bot Token",
+          "value": ""
+        },
+        "KEY":{
+          "description":"To Encrypt Your ID",
+          "value": "Ermaotie"
+        }
+    },
+    "repository": "https://github.com/Ermaotie/MilkyBot",
+    "stack": "container"
+}
