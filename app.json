@@ -19,5 +19,5 @@
         }
     },
     "repository": "https://github.com/Ermaotie/MilkyBot",
-    "stack": "Heroku-18"
+    "stack": "heroku-18"
 }
