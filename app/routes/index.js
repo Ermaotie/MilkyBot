@@ -65,13 +65,13 @@ module.exports = function(app,conf) {
     if(isNotSetWebhook) {
       const host = "https://"+req.hostname;
       setWebhook(host)
-      console.log(isNotSetWebhook)
     }
+    console.log("Variable isNotSetWebhook is "+isNotSetWebhook)
     if(!bot_name){
       var url = baseUrl + '/getMe'
       axios.get(url)
-        .then(res => {
-          bot_name = res.data.result.username;
+        .then(nestedRes => {
+          bot_name = nestedRes.data.result.username;
           res.redirect("https://t.me"+"/"+bot_name)
         }).catch(err => {
           console.log(err);
