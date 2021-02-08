@@ -28,9 +28,9 @@ module.exports = function(app,conf) {
   });
   app.post("/:token", (req,res) => {
     try{
-        var token = req.body.token;
+        var token = req.params.token;
         const chat_id = aesDecrypt(token,key)
-        const msg = req.query.text;
+        const msg = req.body.text;
         if(msg){
             var payload = {
                 "chat_id" : chat_id,
@@ -67,9 +67,17 @@ module.exports = function(app,conf) {
       setWebhook(host)
     }
     if(!bot_name){
-      bot_name = getMe()
+      var url = baseUrl + '/getMe'
+      axios.get(url)
+        .then(res => {
+          bot_name = res.data.result.username;
+          res.redirect("https://t.me"+"/"+bot_name)
+        }).catch(err => {
+          console.log(err);
+        })
+    } else {
+      res.redirect("https://t.me"+"/"+bot_name)
     }
-    res.redirect("https://t.me"+"/"+bot_name)
   })
   function aesEncrypt(data, key) {
     const cipher = crypto.createCipheriv('aes192', key,Buffer.alloc(16, 0));
@@ -92,16 +100,6 @@ module.exports = function(app,conf) {
           console.error(error)
       })
   };
-  function getMe(){
-    var url = baseUrl + '/getMe'
-    axios.get(url)
-      .then(res => {
-        var bot_name = res.body.result.username;
-        return bot_name;
-      }).catch(err => {
-        console.log(err);
-      })
-  };
   function setWebhook(host){
     var url = baseUrl + '/setWebhook';
     axios.get(url,{
@@ -109,7 +107,7 @@ module.exports = function(app,conf) {
         "url" : host
       }
     }).then(res => {
-      var temp = !res.body.result;
+      var temp = !res.data.result;
       isNotSetWebhook = temp;
       return temp;
     }).catch(err => {
